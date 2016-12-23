@@ -37,7 +37,6 @@ p hourglass_sums.max
 
 hourglass #1 = (arr[i][0] + arr[i][1] + arr[i][2]) + (arr[i+1][1]) + (arr[i+2][0] + arr[i+2][1] + arr[i+2][2])
 
-
 hourglass #2 = (arr[0][1] + arr[0][2] + arr[i][3]) + (arr[i+1][2]) + (arr[i+2][1] + arr[i+2][2] + arr[i+2][3])
 
 hourglass #3 = (arr[0][2] + arr[0][3] + arr[i][4]) + (arr[i+1][3]) + (arr[i+2][2] + arr[i+2][3] + arr[i+2][4])
@@ -46,6 +45,5 @@ hourglass #4 = (arr[0][3] + arr[0][4] + arr[i][5]) + (arr[i+1][4]) + (arr[i+2][3
 
 increments j to go through all the hourglasses of each row (i)
 after index 3 of each column (j), move onto the next row by incrementing i.
-
 
 =end
