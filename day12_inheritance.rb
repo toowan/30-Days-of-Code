@@ -17,7 +17,8 @@ end
 class Student < Person
   def initialize(firstName, lastName, id, scores)
     super(firstName, lastName, id)
-    @scores = (scores.inject(:+))/numScores
+    @numScores = scores.count
+    @scores = (scores.inject(:+))/@numScores
   end
 
   def calculate()
