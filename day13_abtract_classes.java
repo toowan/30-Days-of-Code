@@ -1,4 +1,4 @@
-### Provided by Hacker Rank
+// Provided by Hacker Rank
 import java.util.*;
 abstract class Book
 {
@@ -13,7 +13,7 @@ abstract class Book
 
 }
 
-### Only this block below is my work
+// Only this block below is my work
 //Write MyBook Class
 //** Subclass of Book **/
 class MyBook extends Book {
@@ -33,7 +33,7 @@ class MyBook extends Book {
     }
 }
 
-### Below code is provided by Hacker Rank
+// Below code is provided by Hacker Rank
 public class Solution
 {
 
