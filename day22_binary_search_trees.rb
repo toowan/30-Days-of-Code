@@ -24,38 +24,29 @@ class Solution
     # Print each row of tree from left to right, from root to lowest row.
     def levelOrder(root)
       # Enqueue root node
-      queue = []
-      queue << root
-      # Initialize current level and next level. 
-      current_level = 1
-      next_level = 0
+      if root != nil
+        queue = [root]
+      else
+        queue = []
+      end
 
       # While queue is not empty / there are nodes to process
-      while(!queue.empty?)  
-        # Dequeue (remove) root node
-        node = queue.shift  
-        current_level = -1  
-        # print the value of the node
+      while queue != [] 
+        # Dequeue next node
+        node = queue.pop 
+        # process tree's root / print the value of the node
         print "#{node.data} " 
 
-        # enqueue left child node and move down to next level
-        unless node.left.nil?
-          queue << node.left
-          next_level += 1
+        # enqueue child elements from next level in order
+        
+        # if tree has non-empty left subtree, enqueue left child
+        if node.left != nil
+          queue.insert(0,node.left)
         end
-
-        # enqueue right child node and move down to next level
-        unless node.right.nil?
-          queue << node.right
-          next_level += 1
+        # if tree has non-empty right subtree, enqueue right child
+        if node.right != nil
+          queue.insert(0,node.right)
         end
-
-        # when the current level is 0, set it and the next level to 0
-        if current_level == 0
-          current_level = next_level
-          next_level = 0
-        end
-
       end
     end
 end
@@ -69,3 +60,7 @@ for i in 1..T
     root=myTree.insert(root,data)
 end
 myTree.levelOrder(root)
+
+
+
+
