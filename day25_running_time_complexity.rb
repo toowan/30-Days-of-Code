@@ -10,28 +10,30 @@ num_of_tests.times do
   integers << n   # [12, 5, 7]
 end  
 
+# check if n is prime
 def n_is_prime?(n)
   if n <= 1
-    return = false
-  if n == 2
-    return = true
+    return false
+  elsif n == 2
+    return true
+  elsif n.to_i != n
+    return false
   end
-  
-  i = 2
-  while i < n     # 4 < 12
-    if n % i == 0     # 12 % 2 == 0 
-      result = false
-      break 
-    else
-      result = true
+
+  # set the upper limit of the range to be square root of n
+  for i in 2..Math.sqrt(n) do 
+    if n % i == 0     
+        return false
     end
-    i += 1
   end
-  result
+  return true
 end
 
+
+# check each n in the integers array
 idx = 0
 while idx < integers.length    
+  # print "Prime" if true and "Not prime" if not true
   puts n_is_prime?(integers[idx]) ? "Prime" : "Not prime"
   idx += 1
 end
